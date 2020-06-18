@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Security.Cryptography;
 
@@ -6,7 +6,26 @@ namespace DiamondsCacts
 {
     class Program
     {
-        
+        public struct RG
+        {
+            string registro_geral;
+            DateTime data_espedicao;
+            string nome_mae;
+            string nome_pai;
+            string naturalidade;
+            DateTime datanascimento;
+        }
+        public struct Pessoa 
+        {
+
+            string nome;
+            int idade;
+            float altura;
+            string cpf;
+
+            RG rg;
+        }
+
         static void Main(string[] args)
         {
 
@@ -24,6 +43,8 @@ namespace DiamondsCacts
             while (true)
             {
                 Console.Clear();
+                Console.WriteLine("Informações de pessoas. CRUD em C#\n");
+
                 foreach (string menu in menu_opcoes)
                 {
                     Console.Write("" + menu + " ");
@@ -38,6 +59,8 @@ namespace DiamondsCacts
                 Console.Write("Opção selecionada: [" + menu_opcoes[menu_passo] + "] ");
 
                 var key_pressed = Console.ReadKey(true).Key.ToString();
+
+                //Console.WriteLine(key_pressed);
                 
                 if(key_pressed.Equals("DownArrow"))
                 {
@@ -59,8 +82,32 @@ namespace DiamondsCacts
                     }
                     
                 }
-             
 
+                if(key_pressed.Equals("Enter"))
+                {
+                    Console.WriteLine(menu_opcoes[menu_passo]);
+                    switch (menu_passo)
+                    {
+                        case 0:
+                            
+                            break;
+
+                        case 1:
+                            break;
+
+                        case 2:
+                            break;
+
+                        case 3:
+                            break;
+
+                        case 4:
+                            break;                    
+                    }
+
+                    
+                }
+            
             }
             
         }
@@ -68,3 +115,4 @@ namespace DiamondsCacts
         
     }
 }
+
